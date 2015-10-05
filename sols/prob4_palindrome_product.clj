@@ -1,10 +1,10 @@
-(defn palindrome_number? [n]
-  (= (str n) (apply str (reverse (str n))))
-  )
+(defn palindrome-number? [n]
+  (= (str n) (apply str (reverse (str n)))))
 
-(def number_range (range 100 1000))
+(def number-range (range 100 1000))
 
-(defn palindrome_list [number_range] (
-                          for [x number_range  y number_range :when (palindrome_number? (* x y))] (* x y)))
+(defn palindrome-list [number-range]
+  (for [x number-range  y number-range :when (palindrome-number? (* x y))]
+    (* x y)))
 
-(apply max (palindrome_list number_range))
+(apply max (palindrome-list number-range))

@@ -1,10 +1,8 @@
-(defn smallest_number_with_multiple_in_range [divisor_range]
-  (let [no_of_divisors  (count divisor_range)
-        incrementor (last divisor_range)]
+(defn smallest-number-with-multiple-in-range [divisor-range]
+  (let [no-of-divisors  (count divisor-range)
+        incrementor (last divisor-range)]
     (loop [n incrementor]
-      (if (= no_of_divisors (count (for [x divisor_range :while (zero? (rem n x))] (rem n x) )))
-        n (recur (+ n incrementor)))
-      ))
-  )
+      (if (= no-of-divisors (count (for [x divisor-range :while (zero? (rem n x))] (rem n x) )))
+        n (recur (+ n incrementor))))))
 
-(time (smallest_number_with_multiple_in_range (range 1 21)))
+(time (smallest-number-with-multiple-in-range (range 1 21)))
